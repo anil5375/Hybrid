@@ -1,13 +1,13 @@
-package WebAutomation;
+package testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import WebAutomation.AccountRegistrationPage;
-import WebAutomation.HomePage;
-import WebAutomation.BaseClass;
+import pageObjects.AccountRegistrationPage;
+import pageObjects.HomePage;
+import utilities.BaseClass;
 
-public class TC001_AccountRegistrationTest extends BaseClass {
+public class TC001AccountRegistrationTest extends BaseClass {
 	
 	@Test(groups={"Regression","Master"})
 	public void verify_account_registration()
@@ -26,12 +26,12 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		AccountRegistrationPage regpage=new AccountRegistrationPage(driver);
 		
 		logger.info("Providing customer details...");
-		regpage.setFirstName(randomeString().toUpperCase());
-		regpage.setLastName(randomeString().toUpperCase());
-		regpage.setEmail(randomeString()+"@gmail.com");// randomly generated the email
-		regpage.setTelephone(randomeNumber());
+		regpage.setFirstName(randomString().toUpperCase());
+		regpage.setLastName(randomString().toUpperCase());
+		regpage.setEmail(randomString()+"@gmail.com");// randomly generated the email
+		regpage.setTelephone(randomNumber());
 			
-		String password=randomeAlphaNumberic();
+		String password=randomAlphaNumeric();
 			
 		regpage.setPassword(password);
 		regpage.setConfirmPassword(password);
