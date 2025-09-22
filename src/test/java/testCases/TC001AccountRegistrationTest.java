@@ -1,13 +1,14 @@
-package WebAutomation;
+package testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import WebAutomation.AccountRegistrationPage;
-import WebAutomation.HomePage;
-import WebAutomation.BaseClass;
+import pageObjects.AccountRegistrationPage;
+import pageObjects.HomePage;
+import utilities.BaseClass;
+import utilities.BaseClass1;
 
-public class TC001_AccountRegistrationTest extends BaseClass {
+public class TC001AccountRegistrationTest extends BaseClass1 {
 	
 	@Test(groups={"Regression","Master"})
 	public void verify_account_registration()

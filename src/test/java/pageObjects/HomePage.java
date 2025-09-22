@@ -1,10 +1,12 @@
-package WebAutomation;
+package pageObjects;
 
+import WebAutomation.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
 	
 	public HomePage(WebDriver driver)
@@ -13,7 +15,7 @@ public class HomePage extends BasePage{
 	}
 	
 @FindBy(xpath="//span[normalize-space()='My Account']") 
-WebElement lnkMyaccount;
+WebElement lnkAccount;
 
 @FindBy(xpath="//a[normalize-space()='Register']") 
 WebElement lnkRegister;
@@ -24,7 +26,7 @@ WebElement linkLogin;
 
 public void clickMyAccount()
 {
-	lnkMyaccount.click();
+	lnkAccount.click();
 }
 
 public void clickRegister()

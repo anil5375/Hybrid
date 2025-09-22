@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"/>
+    </listeners>
+
+    <test verbose="2" preserve-order="true" name="C:/Test/RestAssured">
+
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="testCases.TC001AccountRegistrationTest"/>
+            <class name="testCases.TC002LoginTest"/>
+
+
+    </classes>
+    </test>
+    <test name="edgetest">
+        <parameter name="os" value="Windows"/>
+        <parameter name="browser" value="edge"/>
+
+        <classes>
+            <class name="testCases.TC001AccountRegistrationTest"/>
+        </classes>
+    </test> <!-- Test -->
+
+</suite>
