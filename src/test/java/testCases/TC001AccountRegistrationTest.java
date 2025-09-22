@@ -6,8 +6,9 @@ import org.testng.annotations.Test;
 import pageObjects.AccountRegistrationPage;
 import pageObjects.HomePage;
 import utilities.BaseClass;
+import utilities.BaseClass1;
 
-public class TC001AccountRegistrationTest extends BaseClass {
+public class TC001AccountRegistrationTest extends BaseClass1 {
 	
 	@Test(groups={"Regression","Master"})
 	public void verify_account_registration()
@@ -26,12 +27,12 @@ public class TC001AccountRegistrationTest extends BaseClass {
 		AccountRegistrationPage regpage=new AccountRegistrationPage(driver);
 		
 		logger.info("Providing customer details...");
-		regpage.setFirstName(randomString().toUpperCase());
-		regpage.setLastName(randomString().toUpperCase());
-		regpage.setEmail(randomString()+"@gmail.com");// randomly generated the email
-		regpage.setTelephone(randomNumber());
+		regpage.setFirstName(randomeString().toUpperCase());
+		regpage.setLastName(randomeString().toUpperCase());
+		regpage.setEmail(randomeString()+"@gmail.com");// randomly generated the email
+		regpage.setTelephone(randomeNumber());
 			
-		String password=randomAlphaNumeric();
+		String password=randomeAlphaNumberic();
 			
 		regpage.setPassword(password);
 		regpage.setConfirmPassword(password);

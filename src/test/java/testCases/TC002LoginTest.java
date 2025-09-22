@@ -4,8 +4,9 @@ import org.testng.annotations.Test;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import utilities.BaseClass;
+import utilities.BaseClass1;
 
-public class TC002LoginTest extends BaseClass {
+public class TC002LoginTest extends BaseClass1 {
     @Test(groups={"Sanity","Master"})
     public void loginTest() {
         HomePage hp = new HomePage(driver);

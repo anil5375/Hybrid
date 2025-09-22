@@ -33,6 +33,9 @@ public class BaseClass {
     public Properties p;
     public static ExtentReports extent;
     public static ExtentTest test;
+    String executionEnv;
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+
     @BeforeClass(alwaysRun = true)
     @Parameters({"os", "browser"})
     public void setup(
@@ -45,9 +48,9 @@ public class BaseClass {
         p = new Properties();
         p.load(file);
 
-        logger = LogManager.getLogger(this.getClass());
+         logger = LogManager.getLogger(this.getClass());
 
-        String executionEnv = p.getProperty("execution_env");
+         executionEnv = p.getProperty("execution_env");
 
         if ("remote".equalsIgnoreCase(executionEnv)) {
             setupRemoteDriver(os, br);
@@ -70,7 +73,7 @@ public class BaseClass {
     }
 
     private void setupRemoteDriver(String os, String br) throws IOException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+
 
         // OS
         switch (os.toLowerCase()) {
@@ -87,6 +90,7 @@ public class BaseClass {
         // Browser
         switch (br.toLowerCase()) {
             case "chrome":
+            driver =    new ChromeDriver();
                 capabilities.setBrowserName("chrome"); break;
             case "edge":
                 capabilities.setBrowserName("MicrosoftEdge"); break;
