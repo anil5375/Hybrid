@@ -1,6 +1,8 @@
 package testCases;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pageObjects.AccountRegistrationPage;
@@ -9,7 +11,7 @@ import utilities.BaseClass;
 import utilities.BaseClass1;
 
 public class TC001AccountRegistrationTest extends BaseClass1 {
-	
+
 	@Test(groups={"Regression","Master"})
 	public void verify_account_registration()
 	{

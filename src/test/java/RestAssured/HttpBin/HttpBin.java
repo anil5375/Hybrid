@@ -1,4 +1,4 @@
-package RestAssured;
+package RestAssured.HttpBin;
 
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.core.IsEqual.equalTo;
 
-public class ApiTest {
+public class HttpBin {
     HashMap<String, String> data = new HashMap<>();
 
     // Set base URI once for all requests (static)
